@@ -8,7 +8,7 @@ const _private = new WeakMap(); // > 1
 
 //4. El método set de la instancia de weakmap recibe como parámetro el objeto que vamos a instanciar (this) y las propiedades que le vamos a asignar. En la sintaxis, las propiedades hay que pasárselas entre corchetes como si fuera un objeto.
 
-class Book {
+export class Book {
     constructor(title, author, price) { // > 2
         const properties = { // > 3
             _title: title,
@@ -33,16 +33,6 @@ class Book {
         return _private.get(this).properties['_price'] = newPrice;
     }
 }
-
-const book1 = new Book('Carrie', 'Stephen King', 20);
-console.log(`Título: ${book1.title} / Autor: ${book1.author} / Precio: ${book1.price} €`);
-
-book1.price = 10;
-console.log(`Descuento del 50% aplicado sobre el libro "${book1.title}" / Precio: ${book1.price} €`);
-
-book1.author = 'Ana Rosa Quintana';
-
-console.log(`El autor sigue siendo ${book1.author}, la propiedad es privada.`);
 
 
 // Nota: 
