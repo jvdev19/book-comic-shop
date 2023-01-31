@@ -14,7 +14,7 @@ const _private = new WeakMap(); // > 1
 
 // Nota (5): 
 // -------
-// Cuando tenemos que preguntar por la propiedad (en este caso con un console log, pero da igual el caso), lo de los guiones bajos lía un poco al principio, y además es una convención para aclararse entre desarrolladores. Quedémonos que tenemos que consultar a lo que se indica como parámetro en la función constructora.
+// Cuando tenemos que preguntar por la propiedad (en este caso con un console log, que haremos en los tests iniciales en index.js pero da igual el caso. Además, esos tests luego los borraremos cuando creemos la UI), lo de los guiones bajos lía un poco al principio, y además es una convención para aclararse entre desarrolladores. Quedémonos que tenemos que consultar a lo que se indica como parámetro en la función constructora.
 
 
 
@@ -23,7 +23,7 @@ const _private = new WeakMap(); // > 1
 
 // Nota (6):
 // ------
-// Habrá que pensar como llega el dato desde el objeto instanciado hasta la interfaz, ya que ahora vamos a crear la clase Ui.js, para pasar todo esto a la interfaz de usuario humana. Todavía tengo que darle una vuelta. De momento creamos el método, y luego ya si eso, lo borramos.
+// Habrá que pensar como llega el dato desde el objeto instanciado hasta la interfaz, ya que ahora puede que haya que crear la clase Ui.js, para pasar todo esto a la interfaz de usuario humana. ¿También es posible que podamos hacer toda la capa de interfaz directamente en index.js? Todavía tengo que darle una vuelta. De momento creamos el método, y luego ya si eso, lo borramos o lo cambiamos.
 
 
 
@@ -38,20 +38,20 @@ export class Book {
         _private.set(this, {properties}); // > 4
     }
     
-    get title(){
+    get title(){ // > 5
         return _private.get(this).properties['_title'];
     }
-    get author(){
+    get author(){ // > 5
         return _private.get(this).properties['_author'];
     }
-    get price(){
+    get price(){ // > 5
         return _private.get(this).properties['_price'];
     }
-    set price(newPrice){
+    set price(newPrice){ // > 5
         return _private.get(this).properties['_price'] = newPrice;
     }
 
-    getAllData() {
+    getAllData() {// > 6
         console.log( `FICHA OFICIAL DE ARTÍCULO: Título: ${this.title}, Autor: ${this.author}, Precio: ${this.price}`);
     }
 }
