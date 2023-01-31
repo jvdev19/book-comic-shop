@@ -3,6 +3,7 @@ const { Comic } = require('./Comic');
 
 //Tests:
 const book1 = new Book('Carrie', 'Stephen King', 20);
+const comic1 = new Comic('The Killing Joke', 'A.M', 150, ['B.B','J.H'] );
 console.log(`Título: ${book1.title} / Autor: ${book1.author} / Precio: ${book1.price} €`);
 
 book1.price = 10;
@@ -13,3 +14,4 @@ book1.author = 'Ana Rosa Quintana';
 console.log(`El autor sigue siendo ${book1.author}, la propiedad es privada.`);
 
 book1.getAllData();
+comic1.getAllData();

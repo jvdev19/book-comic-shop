@@ -19,4 +19,9 @@ export class Comic extends Book {
         super(title, author, price); // > 3
         this.illustrators = illustrators; // > 4
     }
+
+    getAllData(){
+        super.getAllData();
+        console.log(`Illustradores: ${this.illustrators}` );
+    }
 }
