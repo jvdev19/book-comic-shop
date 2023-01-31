@@ -8,6 +8,14 @@ const _private = new WeakMap(); // > 1
 
 //4. El método set de la instancia de weakmap recibe como parámetro el objeto que vamos a instanciar (this) y las propiedades que le vamos a asignar. En la sintaxis, las propiedades hay que pasárselas entre corchetes como si fuera un objeto.
 
+
+//5. En este punto las propiedades no son accesibles. Pero no eso no tiene sentido, queremos algunas privadas (solo lectura), y otras públicas (lectura y escritura). A continuación entran los getters y los setters, que nos permiten, respectivamente, la lectura y la escritura de la propiedad. Recordemos que estos son ya otros métodos, con lo cual lo hacemos fuera del constructor. Vamos a setear todas las propiedades como privadas, exceptuando el precio. El título y el autor del libro no van a cambiar, pero Imaginémonos que en algún momento, al precio le aplicamos un descuento. Para ello, dejaremos esta propiedad accesible.
+
+// Nota: 
+// -------
+// Cuando tenemos que preguntar por la propiedad (en este caso con un console log, pero da igual el caso), lo de los guiones bajos lía un poco al principio, y además es una convención para aclararse entre desarrolladores. Quedémonos que tenemos que consultar a lo que se indica como parámetro en la función constructora.
+
+
 export class Book {
     constructor(title, author, price) { // > 2
         const properties = { // > 3
@@ -17,8 +25,6 @@ export class Book {
         }
         _private.set(this, {properties}); // > 4
     }
-    
-    //5. En este punto las propiedades no son accesibles. Pero no eso no tiene sentido, queremos algunas privadas (solo lectura), y otras públicas (lectura y escritura). A continuación entran los getters y los setters, que nos permiten, respectivamente, la lectura y la escritura de la propiedad. Recordemos que estos son ya otros métodos, con lo cual lo hacemos fuera del constructor. Vamos a setear todas las propiedades como privadas, exceptuando el precio. El título y el autor del libro no van a cambiar, pero Imaginémonos que en algún momento, al precio le aplicamos un descuento. Para ello, dejaremos esta propiedad accesible.
     
     get title(){
         return _private.get(this).properties['_title'];
@@ -33,16 +39,3 @@ export class Book {
         return _private.get(this).properties['_price'] = newPrice;
     }
 }
-
-
-// Nota: 
-// -------
-// Cuando tenemos que preguntar por la propiedad (en este caso con un console log, pero da igual el caso), lo de los guiones bajos lía un poco al principio, y además es una convención para aclararse entre desarrolladores. Quedémonos que tenemos que consultar a lo que se indica como parámetro en la función constructora.
-
-
-
-/* PARA EL PRÓXIMO DÍA: 
-
-Instalar Node para poder separar el código de tests, y la clase Comic.
-
-*/

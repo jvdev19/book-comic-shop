@@ -1,5 +1,7 @@
 const { Book } = require('./Book');
+const { Comic } = require('./Comic');
 
+//Tests:
 const book1 = new Book('Carrie', 'Stephen King', 20);
 console.log(`Título: ${book1.title} / Autor: ${book1.author} / Precio: ${book1.price} €`);
 
