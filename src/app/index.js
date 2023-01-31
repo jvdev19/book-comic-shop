@@ -11,3 +11,5 @@ console.log(`Descuento del 50% aplicado sobre el libro "${book1.title}" / Precio
 book1.author = 'Ana Rosa Quintana';
 
 console.log(`El autor sigue siendo ${book1.author}, la propiedad es privada.`);
+
+book1.getAllData();
