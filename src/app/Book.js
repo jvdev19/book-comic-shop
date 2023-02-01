@@ -33,10 +33,11 @@ export class Book {
         const properties = { // > 3
             _title: title,
             _author: author,
-            _price: price
+            _price: price,
         }
         _private.set(this, {properties}); // > 4
     }
+
     
     get title(){ // > 5
         return _private.get(this).properties['_title'];
@@ -51,7 +52,9 @@ export class Book {
         return _private.get(this).properties['_price'] = newPrice;
     }
 
-    getAllData() {// > 6
-        console.log( `FICHA OFICIAL DE ARTÍCULO: Título: ${this.title}, Autor: ${this.author}, Precio: ${this.price}`);
+    getAllData() {// > 6 
+        let data = [this.title, this.author, this.price];
+        console.log(data); // BORRAR
+        return data;
     }
 }

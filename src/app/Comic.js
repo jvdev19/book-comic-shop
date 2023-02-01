@@ -22,6 +22,7 @@ export class Comic extends Book {
 
     getAllData(){
         super.getAllData();
-        console.log(`Illustradores: ${this.illustrators}` );
+        console.log(this.illustrators); // BORRAR
+        return this.illustrators;
     }
 }
