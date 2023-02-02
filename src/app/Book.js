@@ -47,8 +47,8 @@ export class Book {
         return _private.get(this).properties['_price'] = newPrice;
     }
 
-    getAllData() {// > 6 
+/*     getAllData() {// > 6 
         let data = [this.title, this.author, this.price];
         return data;
-    }
+    } */
 }

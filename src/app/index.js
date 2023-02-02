@@ -7,15 +7,12 @@ const { Ui } = require('./Ui');
 const bookCarrie = new Book('Carrie', 'Stephen King', 20);
 const comicTheKillingJoke = new Comic('The Killing Joke', 'Alan Moore', 150, ['B.B','J.H'] );
 const products = [bookCarrie, comicTheKillingJoke];
+console.log(products);
 const ui = new Ui("#app");
 
 (function () {
     ui.createGrid();
-    products.forEach(product => {
-        let productData = product.getAllData();
-        console.log(productData);
-    });
-
+    ui.renderProducts(products);
 })();
 
 

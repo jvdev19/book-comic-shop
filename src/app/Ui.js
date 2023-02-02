@@ -5,13 +5,22 @@ export class Ui {
         this.container = document.querySelector(container);
     }
     createGrid() {
-        this.container.innerHTML +=`
-            <div class="product-grid"></div>
-        `;
+        this.container.innerHTML +=`<div class="product-grid"></div>`;
     }
-    renderProducts(container, products, ...productData) {
+
+    renderProducts(products){
         products.forEach(product => {
-            container.appendChild(product[productData]);
+            /* container.appendChild(product.title); */
+            console.log(product.title);
+/*             container.appendChild(product.author);
+            container.appendChild(product.price); */
+            if (product.illustrators) {
+                let illustrators = product.illustrators;
+                illustrators.forEach(illustrator => {            
+                    console.log(illustrator);
+                    /* container.appendChild(illustrator); */
+                });
+            }
         });
     }
 }
