@@ -8,19 +8,27 @@ export class Ui {
         this.container.innerHTML +=`<div class="product-grid"></div>`;
     }
 
-    renderProducts(products){
+    renderProducts(container, products){
         products.forEach(product => {
-            /* container.appendChild(product.title); */
-            console.log(product.title);
-/*             container.appendChild(product.author);
-            container.appendChild(product.price); */
+            
+            container.innerHTML += `<ul>`;
+
+            container.innerHTML += `<p><b>Libro</b></p>`;
+            container.innerHTML += `<li>${product.title}</li> `;
+            container.innerHTML += `<li>${product.author}</li> `;
+            container.innerHTML += `<li>${product.price} €</li> `;
+            
             if (product.illustrators) {
                 let illustrators = product.illustrators;
+                container.innerHTML += `<ul>`;
+                container.innerHTML += `<p><i>Ilustradores</i></p>`;
                 illustrators.forEach(illustrator => {            
-                    console.log(illustrator);
-                    /* container.appendChild(illustrator); */
+                    container.innerHTML += `<li>${illustrator}</li>`;
                 });
+                container.innerHTML += `<ul>`;
             }
+            
+            container.innerHTML += `</ul>`;
         });
     }
 }

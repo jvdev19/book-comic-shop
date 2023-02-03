@@ -17,9 +17,9 @@ export class Comic extends Book {
         this.illustrators = illustrators; // > 4
     }
 
-/*     getAllData(){        
+    getAllData(){        
         let data = super.getAllData();
         data.push(this.illustrators); 
         return data;
-    } */
+    }
 }

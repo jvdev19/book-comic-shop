@@ -7,12 +7,12 @@ const { Ui } = require('./Ui');
 const bookCarrie = new Book('Carrie', 'Stephen King', 20);
 const comicTheKillingJoke = new Comic('The Killing Joke', 'Alan Moore', 150, ['B.B','J.H'] );
 const products = [bookCarrie, comicTheKillingJoke];
-console.log(products);
 const ui = new Ui("#app");
+//console.log(bookCarrie.getAllData()[0]); ---> Ver la nota del punto 6 en el fichero Book.js
 
 (function () {
     ui.createGrid();
-    ui.renderProducts(products);
+    ui.renderProducts(ui.container, products);
 })();
 
 

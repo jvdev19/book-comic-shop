@@ -20,8 +20,7 @@ const _private = new WeakMap(); // > 1
 
 // Nota (6):
 // ------
-// Habrá que pensar como llega el dato desde el objeto instanciado hasta la interfaz, ya que ahora puede que haya que crear la clase Ui.js, para pasar todo esto a la interfaz de usuario humana. ¿También es posible que podamos hacer toda la capa de interfaz directamente en index.js? Todavía tengo que darle una vuelta. De momento creamos el método, y luego ya si eso, lo borramos o lo cambiamos.
-
+// He estado a punto de borrar getAllData() ya que para renderizar el grid, se me hacía demasiado complejo recorrer lo que me devolvía. No obstante, no voy a borrar la función, porque puede ser interesante para mostrar toda la información de un mismo producto en individual. Obviamente, esto es muy, muy refactorizable, pero por no eternizar el ejercicio.
 
 export class Book {
     constructor(title, author, price) { // > 2
@@ -47,8 +46,8 @@ export class Book {
         return _private.get(this).properties['_price'] = newPrice;
     }
 
-/*     getAllData() {// > 6 
+    getAllData() {// > 6 
         let data = [this.title, this.author, this.price];
         return data;
-    } */
+    }
 }
