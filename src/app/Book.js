@@ -17,19 +17,24 @@ const _private = new WeakMap(); // > 1
 
 //6. Vamos a crear el método getAllData. La clase Comic también lo heredará, y aplicacremos el concepto de "polimorfismo", que en este caso, basicamente es traerse las propiedades de ese método con "super" desde Book a Comic, y añadirle algo más a la función, en este caso, le pediremos que muestre en la interfaz el, o los nombres de los ilustradores, además de toda la info del libro.
 
+//7. isInCart es una PROPIEDAD PÚBLICA, que determinará si el producto está en el carrito o no. No hace falta meterla en el objeto properties, que es privado.
+
 
 // Nota (6):
 // ------
 // He estado a punto de borrar getAllData() ya que para renderizar el grid, se me hacía demasiado complejo recorrer lo que me devolvía. No obstante, no voy a borrar la función, porque puede ser interesante para mostrar toda la información de un mismo producto en individual. Obviamente, esto es muy, muy refactorizable, pero por no eternizar el ejercicio.
+
 
 export class Book {
     constructor(title, author, price) { // > 2
         const properties = { // > 3
             _title: title,
             _author: author,
-            _price: price,
+            _price: price
         }
         _private.set(this, {properties}); // > 4
+        
+        this.isInCart = false;// > 7
     }
 
     
