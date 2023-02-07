@@ -29,6 +29,6 @@ cart.addProduct('Libro2');
 console.log(cart);
 cart.addProduct('Libro3');
 console.log(cart);
-cart.deleteProduct(-1);
+cart.deleteProduct('Libro3');
 console.log(cart);
 

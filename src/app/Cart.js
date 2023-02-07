@@ -1,11 +1,20 @@
 export class Cart {
-    constructor(){
+    constructor() {
         this.inCartProducts = [];
     }
-    addProduct(product){        
+    
+    addProduct(product) {
         this.inCartProducts.push(product);
     }
-    deleteProduct(product){
-       console.log(this.inCartProducts.slice(0,product));
+
+    deleteProduct(product) {
+        let indexToDelete = this.inCartProducts.indexOf(product);
+        let updatedCart = [];
+        this.inCartProducts.forEach(inCartPoduct => {
+            if (this.inCartProducts.indexOf(inCartPoduct) !== indexToDelete) {
+                updatedCart.push(inCartPoduct);
+            }
+        });
+        this.inCartProducts = updatedCart;
     }
 }
