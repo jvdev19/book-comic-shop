@@ -23,6 +23,12 @@ const ui = new Ui("#app");
 // ----------------------------
 
 //console.log(bookCarrie.getAllData()[0]); ---> Ver la nota del punto 6 en el fichero Book.js
-cart.addProducts(['Libro1','Libro2']);
+cart.addProduct('Libro1');
+console.log(cart);
+cart.addProduct('Libro2');
+console.log(cart);
+cart.addProduct('Libro3');
+console.log(cart);
+cart.deleteProduct(-1);
 console.log(cart);
 

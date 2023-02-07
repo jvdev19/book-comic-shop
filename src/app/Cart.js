@@ -2,7 +2,10 @@ export class Cart {
     constructor(){
         this.inCartProducts = [];
     }
-    addProducts(products){        
-        this.inCartProducts.push(products);
+    addProduct(product){        
+        this.inCartProducts.push(product);
+    }
+    deleteProduct(product){
+       console.log(this.inCartProducts.slice(0,product));
     }
 }
