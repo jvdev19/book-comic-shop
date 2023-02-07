@@ -21,6 +21,5 @@ const ui = new Ui("#app");
 // ----------------------------
 
 //console.log(bookCarrie.getAllData()[0]); ---> Ver la nota del punto 6 en el fichero Book.js
+// products[0].isInCart = true;
 
-products[0].isInCart = true;
-console.log(products[0]);
