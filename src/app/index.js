@@ -13,29 +13,27 @@ const ui = new Ui("#app");
 
 // Obtenido a partir de instancias
 const products = [bookCarrie, comicTheKillingJoke];
-const inCartProducts = cart.inCartProducts;
-
-
-// Tests (borrar al terminar):
-// ----------------------------
-//console.log(bookCarrie.getAllData()[0]); ---> Ver la nota del punto 6 en el fichero Book.js
-cart.addProduct('Libro1');
-console.log(cart);
-cart.addProduct('Libro2');
-console.log(cart);
-cart.addProduct('Libro3');
-console.log(cart);
-cart.deleteProduct('Libro3');
-console.log(cart);
-
 
 
 
 //Esta función autoejecutable arrancará toda la app.
 (function () {
+    
+    //console.log(bookCarrie.getAllData()[0]); ---> Ver la nota del punto 6 en el fichero Book.js
+    cart.addProduct('Libro1');
+    console.log(cart);
+    cart.addProduct('Libro2');
+    console.log(cart);
+    cart.addProduct('Libro3');
+    console.log(cart);
+    cart.deleteProduct('Libro3');
+    console.log(cart);
+    
+    
+    //Aquí escribimos el código final
     ui.createGrid();
     ui.renderProductList(ui.container, products);
-    ui.renderProductCart(ui.container, inCartProducts);
+    ui.renderProductCart(ui.container, cart.inCartProducts);
 })();
 
 
