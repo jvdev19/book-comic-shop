@@ -8,11 +8,12 @@ export class Ui {
         this.container.innerHTML +=`<div class="product-grid"></div>`;
     }
 
-    renderProducts(container, products){
-        products.forEach(product => {
-            
+    renderProductList(container, products){
+        container.innerHTML += `<h3> <strong>Lista de libros</strong> </h3> <hr>`;
+        
+        products.forEach(product => {    
             container.innerHTML += `<ul>`;
-
+            
             container.innerHTML += `<p><b>Libro</b></p>`;
             container.innerHTML += `<li>${product.title}</li> `;
             container.innerHTML += `<li>${product.author}</li> `;
@@ -30,5 +31,12 @@ export class Ui {
             
             container.innerHTML += `</ul>`;
         });
+    }
+    
+    
+    renderProductCart(container, cart){
+        console.log(cart.length);
+        container.innerHTML += ` <br><br> <h3> <strong>Carrito de la compra</strong> </h3> <hr>`;
+        container.innerHTML += `<p> <strong>Cantidad:</strong> ${cart.length} </p>`;
     }
 }
