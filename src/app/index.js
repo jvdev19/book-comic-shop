@@ -5,14 +5,17 @@ const { Ui } = require('./Ui');
 
 // -->> El fichero index.js siempre será el fichero que se encargará de arrancar la app en nuestro entorno de desarrollo. Al compilar para producción, veremos cómo se genera una carpeta /dist, con un bundle.js donde irá todo el código compilado.
 
-// Instancias
+// Instancias Productos
 const bookCarrie = new Book('Carrie', 'Stephen King', 20);
 const comicTheKillingJoke = new Comic('The Killing Joke', 'Alan Moore', 150, ['B.B','J.H'] );
+const bookLaSombraDelViento = new Book('La Sombra del Viento', 'Carlos Ruiz Zafón', 85);
+
+// Instancias app
 const cart = new Cart();
 const ui = new Ui("#app");
 
 // Obtenido a partir de instancias
-const products = [bookCarrie, comicTheKillingJoke];
+const products = [bookCarrie, comicTheKillingJoke, bookLaSombraDelViento];
 
 
 
@@ -20,13 +23,17 @@ const products = [bookCarrie, comicTheKillingJoke];
 (function () {
     
     //console.log(bookCarrie.getAllData()[0]); ---> Ver la nota del punto 6 en el fichero Book.js
-    cart.addProduct('Libro1');
+    cart.addProduct(products[0]);
+    products[0].isInCart = true;
     console.log(cart);
-    cart.addProduct('Libro2');
+    cart.addProduct(products[1]);
+    products[1].isInCart = true;
     console.log(cart);
-    cart.addProduct('Libro3');
+    cart.addProduct(products[2]);
+    products[2].isInCart = true;
     console.log(cart);
-    cart.deleteProduct('Libro3');
+    cart.deleteProduct(products[2]);
+    products[2].isInCart = false;
     console.log(cart);
     
     

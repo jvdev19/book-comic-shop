@@ -34,9 +34,10 @@ export class Ui {
     }
     
     
-    renderProductCart(container, cart, ){
+    renderProductCart(container, cart){
         console.log(cart);
         container.innerHTML += ` <br><br> <h3> <strong>Carrito de la compra</strong> </h3> <hr>`;
         container.innerHTML += `<p> <strong>Cantidad:</strong> ${cart.length} </p>`;
+        container.innerHTML += `<p> <strong>Productos:</strong> ${cart.length} </p>`;
     }
 }
