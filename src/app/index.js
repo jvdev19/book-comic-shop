@@ -9,13 +9,15 @@ const { Ui } = require('./Ui');
 const bookCarrie = new Book('Carrie', 'Stephen King', 20);
 const comicTheKillingJoke = new Comic('The Killing Joke', 'Alan Moore', 150, ['B.B','J.H'] );
 const bookLaSombraDelViento = new Book('La Sombra del Viento', 'Carlos Ruiz Zafón', 85);
+const bookDiezNegritos = new Book('Diez Negritos y no quedó ninguno', 'Agatha Christie', 97);
+const bookHPotterPiedra = new Book('Harry Potter y la piedra filosofal', 'J.k. Rowling', 120);
 
 // Instancias app
 const cart = new Cart();
 const ui = new Ui("#app");
 
 // Obtenido a partir de instancias
-const products = [bookCarrie, comicTheKillingJoke, bookLaSombraDelViento];
+const products = [bookCarrie, comicTheKillingJoke, bookLaSombraDelViento, bookDiezNegritos, bookHPotterPiedra];
 
 
 
@@ -35,6 +37,8 @@ const products = [bookCarrie, comicTheKillingJoke, bookLaSombraDelViento];
     // products[2].isInCart = true;
     console.log(cart);
     cart.deleteProduct(products[2]);
+    cart.addProduct(products[3]);
+    cart.addProduct(products[4]);
     // products[2].isInCart = false;    
     
     

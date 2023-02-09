@@ -21,12 +21,12 @@ export class Ui {
             
             if (product.illustrators) {
                 let illustrators = product.illustrators;
+                container.innerHTML += `<p style="padding-left:25px; display:block;"><i>Ilustradores</i></p>`;
                 container.innerHTML += `<ul>`;
-                container.innerHTML += `<p><i>Ilustradores</i></p>`;
                 illustrators.forEach(illustrator => {            
-                    container.innerHTML += `<li>${illustrator}</li>`;
+                    container.innerHTML += `<li style="padding-left:25px; display:block;">${illustrator}</li>`;
                 });
-                container.innerHTML += `<ul>`;
+                container.innerHTML += `</ul>`;
             }
             
             container.innerHTML += `</ul>`;
@@ -40,16 +40,16 @@ export class Ui {
         container.innerHTML += `<p> <strong>Cantidad:</strong> ${cart.length} </p>`;
         container.innerHTML += `<p> <strong>Productos:</strong></p>`;
         cart.forEach(product => {            
-            container.innerHTML += `<p> ${product.title} / ${product.author} / ${product.price} </p>`;
+            container.innerHTML += `<p> >> ${product.title} / ${product.author} / ${product.price} </p>`;
 
             if (product.illustrators) {
                 let illustrators = product.illustrators;
+                container.innerHTML += `<p style="padding-left:25px; display:block;"><i>Ilustradores</i></p>`;
                 container.innerHTML += `<ul>`;
-                container.innerHTML += `<p><i>Ilustradores</i></p>`;
                 illustrators.forEach(illustrator => {            
-                    container.innerHTML += `<li>${illustrator}</li>`;
+                    container.innerHTML += `<li style="padding-left:25px; display:block;">${illustrator}</li>`;
                 });
-                container.innerHTML += `<ul>`;                
+                container.innerHTML += `</ul>`;                
             }
 
         });
