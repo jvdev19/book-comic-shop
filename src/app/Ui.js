@@ -36,8 +36,22 @@ export class Ui {
     
     renderProductCart(container, cart){
         console.log(cart);
-        container.innerHTML += ` <br><br> <h3> <strong>Carrito de la compra</strong> </h3> <hr>`;
+        container.innerHTML += `<br><br> <h3> <strong>Carrito de la compra</strong> </h3> <hr>`;
         container.innerHTML += `<p> <strong>Cantidad:</strong> ${cart.length} </p>`;
-        container.innerHTML += `<p> <strong>Productos:</strong> ${cart.length} </p>`;
+        container.innerHTML += `<p> <strong>Productos:</strong></p>`;
+        cart.forEach(product => {            
+            container.innerHTML += `<p> ${product.title} / ${product.author} / ${product.price} </p>`;
+
+            if (product.illustrators) {
+                let illustrators = product.illustrators;
+                container.innerHTML += `<ul>`;
+                container.innerHTML += `<p><i>Ilustradores</i></p>`;
+                illustrators.forEach(illustrator => {            
+                    container.innerHTML += `<li>${illustrator}</li>`;
+                });
+                container.innerHTML += `<ul>`;                
+            }
+
+        });
     }
 }

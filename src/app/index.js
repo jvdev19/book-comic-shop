@@ -22,22 +22,24 @@ const products = [bookCarrie, comicTheKillingJoke, bookLaSombraDelViento];
 //Esta función autoejecutable arrancará toda la app.
 (function () {
     
+    //Consola
+    //------------------------------------------------------------------------------------------------------------
     //console.log(bookCarrie.getAllData()[0]); ---> Ver la nota del punto 6 en el fichero Book.js
     cart.addProduct(products[0]);
-    products[0].isInCart = true;
+    // products[0].isInCart = true;
     console.log(cart);
     cart.addProduct(products[1]);
-    products[1].isInCart = true;
+    // products[1].isInCart = true;
     console.log(cart);
     cart.addProduct(products[2]);
-    products[2].isInCart = true;
+    // products[2].isInCart = true;
     console.log(cart);
     cart.deleteProduct(products[2]);
-    products[2].isInCart = false;
-    console.log(cart);
+    // products[2].isInCart = false;    
     
     
-    //Aquí escribimos el código final
+    //Vista navegador
+    //------------------------------------------------------------------------------------------------------------
     ui.createGrid();
     ui.renderProductList(ui.container, products);
     ui.renderProductCart(ui.container, cart.inCartProducts);

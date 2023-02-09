@@ -34,7 +34,7 @@ export class Book {
         }
         _private.set(this, {properties}); // > 4
         
-        this.isInCart = false;// > 7
+        // this.isInCart = false;
     }
 
     
@@ -51,9 +51,9 @@ export class Book {
         return _private.get(this).properties['_price'] = newPrice;
     }
 
-    addToCart(){
-        this.isInCart = true;
-    }
+//    addToCart(){
+//        this.isInCart = true;
+//    }
 
     getAllData() {// > 6 
         let data = [this.title, this.author, this.price];
