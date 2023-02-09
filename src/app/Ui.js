@@ -54,4 +54,16 @@ export class Ui {
 
         });
     }
+
+    renderAddProductBtn(container, callback){
+        //Añadir elemento HTML
+        //Meterlo en el container
+        //Asignarle función de la clase CART addProduct como CallBack (El concepto es que el carro "coge" los productos, no que los productos entran)
+        
+    }
+    renderDeleteProductBtn(container, callback){
+        //Añadir elemento HTML
+        //Meterlo en el container
+        //Asignarle función de la clase CART deleteProduct como CallBack (El concepto es que el carro "coge" los productos, no que los productos entran)
+    }
 }
