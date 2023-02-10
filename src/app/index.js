@@ -20,25 +20,24 @@ const ui = new Ui("#app");
 const products = [bookCarrie, comicTheKillingJoke, bookLaSombraDelViento, bookDiezNegritos, bookHPotterPiedra];
 
 
-
 //Esta función autoejecutable arrancará toda la app.
 (function () {
     
     //Consola
     //------------------------------------------------------------------------------------------------------------
     //console.log(bookCarrie.getAllData()[0]); ---> Ver la nota del punto 6 en el fichero Book.js
-    cart.addProduct(products[0]);
+    //cart.addProduct(products[0]);
     // products[0].isInCart = true;
-    console.log(cart);
-    cart.addProduct(products[1]);
+    // console.log(cart);
+    // cart.addProduct(products[1]);
     // products[1].isInCart = true;
-    console.log(cart);
-    cart.addProduct(products[2]);
+    //console.log(cart);
+    //cart.addProduct(products[2]);
     // products[2].isInCart = true;
-    console.log(cart);
-    cart.deleteProduct(products[2]);
-    cart.addProduct(products[3]);
-    cart.addProduct(products[4]);
+    //console.log(cart);
+    //cart.deleteProduct(products[2]);
+    //cart.addProduct(products[3]);
+    //cart.addProduct(products[4]);
     // products[2].isInCart = false;    
     
     
@@ -47,6 +46,21 @@ const products = [bookCarrie, comicTheKillingJoke, bookLaSombraDelViento, bookDi
     ui.createGrid();
     ui.renderProductList(ui.container, products);
     ui.renderProductCart(ui.container, cart.inCartProducts);
+    
+    /*     products.forEach((product, i) => {
+        let button = document.querySelector(`#addProduct-${i}`);
+        let func = cart.addProduct(i);
+        button.addEventListener('click',func);
+    }); */
+    
+    for (let i = 0; i < products.length; i++) {
+        let button = document.querySelector(`#addProduct-${i}`);
+        button.addEventListener('click', function () {
+            cart.addProduct(products[i]);
+            console.log(cart);
+        });  
+    }
+
 })();
 
 

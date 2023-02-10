@@ -9,9 +9,10 @@ export class Ui {
     }
 
     renderProductList(container, products){
+        let i = 0;
         container.innerHTML += `<h3> <strong>Lista de libros</strong> </h3> <hr>`;
         
-        products.forEach(product => {    
+        products.forEach((product, i) => { 
             container.innerHTML += `<ul>`;
             
             container.innerHTML += `<p><b>Libro</b></p>`;
@@ -30,16 +31,17 @@ export class Ui {
             }
             
             container.innerHTML += `</ul>`;
+            container.innerHTML += `<button id="addProduct-${i}">Añadir producto ${i}</button>`;
         });
     }
     
     
-    renderProductCart(container, cart){
-        console.log(cart);
+    renderProductCart(container, products){
+        console.log(products);
         container.innerHTML += `<br><br> <h3> <strong>Carrito de la compra</strong> </h3> <hr>`;
-        container.innerHTML += `<p> <strong>Cantidad:</strong> ${cart.length} </p>`;
+        container.innerHTML += `<p> <strong>Cantidad:</strong> ${products.length} </p>`;
         container.innerHTML += `<p> <strong>Productos:</strong></p>`;
-        cart.forEach(product => {            
+        products.forEach(product => {            
             container.innerHTML += `<p> >> ${product.title} / ${product.author} / ${product.price} </p>`;
 
             if (product.illustrators) {
@@ -53,17 +55,5 @@ export class Ui {
             }
 
         });
-    }
-
-    renderAddProductBtn(container, callback){
-        //Añadir elemento HTML
-        //Meterlo en el container
-        //Asignarle función de la clase CART addProduct como CallBack (El concepto es que el carro "coge" los productos, no que los productos entran)
-        
-    }
-    renderDeleteProductBtn(container, callback){
-        //Añadir elemento HTML
-        //Meterlo en el container
-        //Asignarle función de la clase CART deleteProduct como CallBack (El concepto es que el carro "coge" los productos, no que los productos entran)
     }
 }
