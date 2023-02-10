@@ -44,20 +44,25 @@ const products = [bookCarrie, comicTheKillingJoke, bookLaSombraDelViento, bookDi
     //Vista navegador
     //------------------------------------------------------------------------------------------------------------
     ui.createGrid();
-    ui.renderProductList(ui.container, products);
-    ui.renderProductCart(ui.container, cart.inCartProducts);
+    ui.renderProductList(products);
+    // ui.renderProductCart(cart.inCartProducts);
     
-    /*     products.forEach((product, i) => {
+    
+    /*     
+    products.forEach((product, i) => {
         let button = document.querySelector(`#addProduct-${i}`);
         let func = cart.addProduct(i);
         button.addEventListener('click',func);
-    }); */
+    });
     
-    for (let i = 0; i < products.length; i++) {
-        let button = document.querySelector(`#addProduct-${i}`);
-        button.addEventListener('click', function () {
-            cart.addProduct(products[i]);
-            console.log(cart);
+    */
+   
+   for (let i = 0; i < products.length; i++) {
+       let button = document.querySelector(`#addProduct-${i}`);
+       button.addEventListener('click', function hola() {
+           cart.addProduct(products[i]);
+           console.log(cart.inCartProducts);
+           ui.renderProductCart(cart.inCartProducts);
         });  
     }
 
