@@ -14,7 +14,7 @@ const bookHPotterPiedra = new Book('Harry Potter y la piedra filosofal', 'J.k. R
 
 // Instancias app
 const cart = new Cart();
-const ui = new Ui("#app");
+const ui = new Ui();
 
 // Obtenido a partir de instancias
 const products = [bookCarrie, comicTheKillingJoke, bookLaSombraDelViento, bookDiezNegritos, bookHPotterPiedra];
@@ -43,7 +43,6 @@ const products = [bookCarrie, comicTheKillingJoke, bookLaSombraDelViento, bookDi
     
     //Vista navegador
     //------------------------------------------------------------------------------------------------------------
-    ui.createGrid();
     ui.renderProductList(products);
     ui.renderProductCart(cart.inCartProducts);
     // --> No repinta la interfaz. Podemos comprobarlo en la pestaña "procesadores de eventos". Al cargar asigna los eventos, pero al ejecutar un evento del objeto UI, no hace el repintado con los datos que le pasamos. A los botones se le asigna la función que, aunque antes era anónima, ahora hemos nombrado como "test", pero después, resetea la interfaz a su estado original. Tiene que haber un método en la UI que se dedique a repintar.
@@ -52,7 +51,7 @@ const products = [bookCarrie, comicTheKillingJoke, bookLaSombraDelViento, bookDi
         let button = document.querySelector(`#addProduct-${i}`);
         button.addEventListener('click', function test() {
             cart.addProduct(products[i]);
-            products[i].isInCart = true;
+            ui.renderProductCart(cart.inCartProducts);
             console.log(cart.inCartProducts); 
          });  
      }
