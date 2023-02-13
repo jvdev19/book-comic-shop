@@ -35,22 +35,20 @@ export class Ui {
     
     
     renderProductCart(products){
-//        this.cart.innerHTML += `<br><br> <h3> <strong>Carrito de la compra</strong> </h3> <hr>`;
-        this.cart.innerHTML += `<p> <strong>Cantidad:</strong> ${products.length} </p>`;
-//        this.cart.innerHTML += `<p> <strong>Productos:</strong></p>`;
+        let template = `<p> <strong>Cantidad:</strong> ${products.length} </p>`;
         products.forEach(product => {
-            this.cart.innerHTML += `<p> >> ${product.title} / ${product.author} / ${product.price} </p>`;
+            template += `<p> >> ${product.title} / ${product.author} / ${product.price} </p>`;
 
             if (product.illustrators) {
                 let illustrators = product.illustrators;
-                this.cart.innerHTML += `<p style="padding-left:25px; display:block;"><i>Ilustradores</i></p>`;
-                this.cart.innerHTML += `<ul>`;
+                template += `<p style="padding-left:25px; display:block;"><i>Ilustradores</i></p>`;
+                template += `<ul>`;
                 illustrators.forEach(illustrator => {            
-                    this.cart.innerHTML += `<li style="padding-left:25px; display:block;">${illustrator}</li>`;
+                    template += `<li style="padding-left:25px; display:block;">${illustrator}</li>`;
                 });
-                this.cart.innerHTML += `</ul>`;
+                template += `</ul>`;
             }
-
         });
+        this.cart.innerHTML = template;
     }
 }
