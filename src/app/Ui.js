@@ -8,7 +8,7 @@ export class Ui {
     }
 
     renderProductList(products){
-        this.productGrid.innerHTML += `<h3> <strong>Lista de libros</strong> </h3> <hr>`;
+        this.productGrid.innerHTML += `<h2> <strong>Lista de libros</strong> </h2>`;
         
         products.forEach((product, i) => { 
             this.productGrid.innerHTML += `<ul>`;
@@ -36,7 +36,8 @@ export class Ui {
     
     renderProductCart(products){
         let template = `<p> <strong>Cantidad:</strong> ${products.length} </p>`;
-        products.forEach(product => {
+
+        products.forEach((product, i) => {
             template += `<p> >> ${product.title} / ${product.author} / ${product.price} </p>`;
 
             if (product.illustrators) {
@@ -48,6 +49,8 @@ export class Ui {
                 });
                 template += `</ul>`;
             }
+            template += `<button id="removeProduct-${i}">Quitar del carrito producto ${i}</button>`;
+            template += `<hr/>`;
         });
         this.cart.innerHTML = template;
     }
